@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "npm run lint && node-sass css/index.scss css/index.css --output-style compressed",
-    "lint": "stylelint 'css/**/*.scss' --config .stylelintrc -syntax scss",
+    "lint": "stylelint 'css/**/*.scss' --config .stylelintrc --syntax scss",
     "start": "npm run build -- -w -- source-map true",
     "precommit": "npm run lint"
   },
