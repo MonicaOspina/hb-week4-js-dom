@@ -1,4 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+//general
+@import "reset";
+@import "variables";
+
+
+@import "gallery";
