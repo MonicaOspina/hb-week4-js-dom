@@ -1,5 +1,5 @@
-import data, { gallery } from './gallery/_gallery.js'
+import data, { Gallery } from './gallery/_gallery.js'
 
 /* eslint-disable */
-new gallery(document.querySelector('.gallery'), data)
+new Gallery(document.querySelector('.gallery'), data)
 /* eslint-enable */
