@@ -1,6 +1,8 @@
 @import 'node_modules/reset-css/_reset';
+
 @import "shared/reset";
 @import "shared/variables";
+@import 'shared/page';
 
 
-@import "src/gallery/gallery";
+@import "gallery/gallery";
