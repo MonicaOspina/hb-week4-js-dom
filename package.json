@@ -9,7 +9,7 @@
     "build": "npm-run-all clean lint:** --parallel build:css copy:**",
     "build:css": "node-sass src/index.scss public/index.css --output-style compressed",
     "lint": "npm-run-all lint:**",
-    "lint:css": "stylelint 'shared/**/*.scss' --syntax scss",
+    "lint:css": "stylelint 'src/**/*.scss' --syntax scss",
     "lint:js": "standard 'src/**/*.js'",
     "watch:html": "onchange 'src/**/*.html' -- npm run copy:html",
     "watch:css": "npm run build:css -- -w --source-map true",
