@@ -20,7 +20,6 @@
     "cp:html": "copyfiles -u 1 src/**/*.html public",
     "cp:js": "copyfiles -u 1 src/**/*.js public",
     "cp:jpg": "copyfiles -u 1 src/**/*.jpg public",
-    "precommit": "npm run lint",
     "clean": "rm -rf public/",
     "start:build": "npm-run-all build serve",
     "start": "npm-run-all copy:** build:css --parallel watch:** serve",

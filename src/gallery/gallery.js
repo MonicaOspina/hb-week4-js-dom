@@ -1,5 +1,5 @@
-export class Gallery{
-  constructor (node, data){
+export class Gallery {
+  constructor (node, data) {
     this.index = 0
     this.node = node
     this.elements = {}
@@ -7,18 +7,17 @@ export class Gallery{
     this.setShell()
     this.setUI(data)
     this.updateArrowsState()
-
   }
 
   static get states () {
     return {
-      imageSelected: "gallery__images-item",
+      imageSelected: 'gallery__images-item',
       dotSelected: 'gallery__dot-button--selected',
       arrowDisabled: 'gallery__control--disabled'
     }
   }
 
-  static get templates (){
+  static get templates () {
     return {
       shell: (
         `<div class="gallery__images">
@@ -28,7 +27,7 @@ export class Gallery{
            <button class="gallery__control gallery__control-left"><--</button>
            <button class="gallery__control gallery__control-right">--></button> 
          </div>
-         <ul class ="gallery__dots"></ul>`  
+         <ul class ="gallery__dots"></ul>`
       ),
       dot: (
         `<li class="gallery__dot"> 
@@ -79,16 +78,15 @@ export class Gallery{
   }
 
   updateArrowsState () {
-
     if (this.index === 0) {
-       this.elements.leftBtn.classList.add(Gallery.states.arrowDisabled)
-      } else if (this.index === this.elements.galleryItems.length - 1) {
-       this.elements.rightBtn.classList.add(Gallery.states.arrowDisabled)
-      } else {
-       this.elements.leftBtn.classList.remove(Gallery.states.arrowDisabled)
-       this.elements.rightBtn.classList.remove(Gallery.states.arrowDisabled)
-      }
+      this.elements.leftBtn.classList.add(Gallery.states.arrowDisabled)
+    } else if (this.index === this.elements.galleryItems.length - 1) {
+      this.elements.rightBtn.classList.add(Gallery.states.arrowDisabled)
+    } else {
+      this.elements.leftBtn.classList.remove(Gallery.states.arrowDisabled)
+      this.elements.rightBtn.classList.remove(Gallery.states.arrowDisabled)
     }
+  }
 
   setEvents () {
     this.elements.rightBtn.addEventListener('click', this.next.bind(this))
@@ -96,7 +94,7 @@ export class Gallery{
     this.elements.dotsContainer.addEventListener('click', this.dotSelect.bind(this))
     this.node.addEventListener('keyup', this.selectImageByKey.bind(this))
   }
-  
+
   next () {
     if (index >= 0 && index < this.elements.galleryItems.length - 1) {
       clear()
@@ -109,7 +107,7 @@ export class Gallery{
   back () {
     if (index > 0 && index <= this.elements.galleryItems.length - 1) {
       clear()
-      this.index =index - 1
+      this.index = index - 1
       select(index)
       this.updateArrowsState()
     }
@@ -120,7 +118,7 @@ export class Gallery{
     dots[this.index].classList.remove(Gallery.states.dotSelected)
   }
 
-  select ( index ) {
+  select (index) {
     galleryItems[this.index].classList.add(Gallery.states.imageSelected)
     dots[this.index].classList.add(Gallery.states.dotSelected)
   }
@@ -131,8 +129,8 @@ export class Gallery{
     select(index)
     disabledBtn()
   }
-  
-  selectImageByKey ( {keyCode} ) {
+
+  selectImageByKey ({keyCode}) {
     clear()
     index = keyCode == 37 ? this.index - 1 : keyCode == 39 ? this.index + 1 : index
     select(index)
@@ -140,8 +138,8 @@ export class Gallery{
   }
 }
 export default Gallery
-/*var position = 0
-var images = document.querySelectorAll('.gallery__images-item') 
+/* var position = 0
+var images = document.querySelectorAll('.gallery__images-item')
 images[position].classList.add('gallery__images-item--selected')
 var rightBtn = document.querySelector('.gallery__control-right')
 rightBtn.addEventListener('click', next)
@@ -192,7 +190,6 @@ function clear () {
     dots[position].classList.remove('gallery__dot-button--selected')
 }
 
-
 function select ( position ) {
   images[position].classList.add('gallery__images-item--selected')
   dots[position].classList.add('gallery__dot-button--selected')
@@ -207,4 +204,4 @@ function disabledBtn () {
     leftBtn.classList.remove('gallery__control--disabled')
     rightBtn.classList.remove('gallery__control--disabled')
   }
-}*/
+} */
